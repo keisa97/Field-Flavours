@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseUI
+import PKHUD
 
 class OrchardTableViewCell: UITableViewCell {
     @IBOutlet weak var availableFruitsLabel: UILabel!
@@ -17,10 +18,10 @@ class OrchardTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var orchard : OrchardModel?
+    var navigationUrl : URL?
     
     @IBAction func quickNavigateButton(_ sender: UIButton) {
-        guard let orchard = orchard,
-            let url = URL(string:    "http://maps.apple.com/?daddr=\(orchard.coodrinate.latitude),\(orchard.coodrinate.longitude)") else {
+        guard let url = navigationUrl else{
             return
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -29,8 +30,7 @@ class OrchardTableViewCell: UITableViewCell {
     func populate(orchard: OrchardModel){
         nameLabel.text = orchard.orchadName
         availableFruitsLabel.text = orchard.fruitsAvailable
-        
-        
+        navigationUrl = URL(string:    "http://maps.apple.com/?daddr=\(orchard.coodrinate.latitude),\(orchard.coodrinate.longitude)")   
         let ref = orchard.imageRef
         //if we have an image load it
         if let _ = orchard.orchardImageBackgroundImageURL{

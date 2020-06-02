@@ -24,6 +24,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var continueButton: UIButton!
     
+    @IBAction func singUpBtnAction(_ sender: UIButton) {
+        NotificationCenter.default.removeObserver(self)
+
+    }
+    
+    @IBAction func loginBtnAction(_ sender: UIButton) {
+        NotificationCenter.default.removeObserver(self)
+
+    }
+    
     func transitionToHome(){
         let homeViewController =
             self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController
@@ -39,6 +49,8 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "OrchardMain", bundle: nil)
         let vc = storyboard.instantiateInitialViewController()
         self.show(vc!, sender: self)
+        NotificationCenter.default.removeObserver(self)
+
     }
     
     func setUpElements(){
@@ -53,7 +65,7 @@ class ViewController: UIViewController {
     func setUpVideo(){
         
         //get the path to the resource in the bundle
-        guard let bundlePath =  Bundle.main.path(forResource: "fieldTouchVideo", ofType: ".mp4") else {
+        guard let bundlePath =  Bundle.main.path(forResource: "FinalHomePage", ofType: ".mov") else {
             return
         }
         
@@ -69,22 +81,24 @@ class ViewController: UIViewController {
         videoPlayerLayer = AVPlayerLayer(player: videoPlayer!)
         //adujst the size and frame
         videoPlayerLayer?.frame = CGRect(
-            x: -self.view.frame.size.width*1.4,
-            y: 0,
-            width: self.view.frame.size.width*4,
-            height: self.view.frame.size.height)
-        
-//            videoPlayerLayer?.frame = CGRect(
-//            x: 0,
+//            x: -self.view.frame.size.width*1.4,
 //            y: 0,
-//            width: self.view.frame.size.width,
+//            width: self.view.frame.size.width*4,
 //            height: self.view.frame.size.height)
         
+//            videoPlayerLayer?.frame = CGRect(
+            x: 0,
+            y: 80,
+            width: self.view.frame.size.width*1.2,
+            height: self.view.frame.size.height)
+        print(self.view.frame.size.width)
         
         view.layer.insertSublayer(videoPlayerLayer!, at: 0)
         
         // add it to the view and play it
-        videoPlayer?.playImmediately(atRate: 1)
+        print(#function , videoPlayer, "started")
+        videoPlayer?.playImmediately(atRate: 0.5)
+        videoPlayer?.volume = 0
         
     }
     
@@ -100,6 +114,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setUpVideo()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+        videoPlayer = nil
+        print(videoPlayer)
     }
 
     

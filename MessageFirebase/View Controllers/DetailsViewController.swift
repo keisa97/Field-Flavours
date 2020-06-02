@@ -32,6 +32,7 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var detailsLabel: UILabel!
     
     @IBOutlet weak var contactNUmberLabel: UILabel!
+    @IBOutlet weak var backgroundImageView: RoundImageView!
     //    @IBAction func website(_ sender: UIButton) {
 //        guard let url =
 //            URL(string: landMark?.productURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else{return}
@@ -73,10 +74,23 @@ class DetailsViewController: UIViewController {
         orchardNameLabel.layer.masksToBounds = true
         
         fruitsLabel.text = orchard.fruitsAvailable
-        contactNUmberLabel.text = "Contact number - \(orchard.contactNumber)"
+        
+        contactNUmberLabel.text = "Contact number: \(orchard.contactNumber)"
         detailsLabel.text = orchard.orchardDescription
         //contactNUmberLabel.text 
         //detailsLabel.text = landMark.shortDescription
+        
+        let ref = orchard.imageRef
+        //if we have an image load it
+        if let _ = orchard.orchardImageBackgroundImageURL{
+            backgroundImageView.sd_setImage(with: ref)
+            
+            //placeholder:
+            backgroundImageView.sd_setImage(with: ref, placeholderImage: #imageLiteral(resourceName: "apple tree"))
+        }else{
+            //could get ref
+            backgroundImageView.image = #imageLiteral(resourceName: "apple tree")
+        }
     }
     
 

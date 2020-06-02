@@ -30,6 +30,7 @@
 		3386B60D242FA77100B09ACB /* Orchard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386B60C242FA77100B09ACB /* Orchard.swift */; };
 		3386B68F243205EC00B09ACB /* AddOrchadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386B68E243205EC00B09ACB /* AddOrchadViewController.swift */; };
 		3399FCC5247173C500652606 /* PortraitNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399FCC4247173C500652606 /* PortraitNavController.swift */; };
+		33A6DA3D2485917F00EAFA09 /* FinalHomePage.mov in Resources */ = {isa = PBXBuildFile; fileRef = 33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */; };
 		33E5FF15245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5FF14245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift */; };
 		33E5FFB62464707C0012A9A3 /* OrchardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E5FFB52464707C0012A9A3 /* OrchardMain.storyboard */; };
 		33E5FFBD246472E70012A9A3 /* Anotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5FFBA246472E70012A9A3 /* Anotation.swift */; };
@@ -45,6 +46,7 @@
 		33E76AB62425178700380428 /* MessageFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E76AB52425178700380428 /* MessageFirebaseTests.swift */; };
 		33E76AC12425178700380428 /* MessageFirebaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E76AC02425178700380428 /* MessageFirebaseUITests.swift */; };
 		33E76ACF24251CED00380428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33E76ACE24251CED00380428 /* GoogleService-Info.plist */; };
+		33EE32D9247C1F9A0073FB48 /* homepage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33EE32D8247C19590073FB48 /* homepage.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		3386B60C242FA77100B09ACB /* Orchard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orchard.swift; sourceTree = "<group>"; };
 		3386B68E243205EC00B09ACB /* AddOrchadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrchadViewController.swift; sourceTree = "<group>"; };
 		3399FCC4247173C500652606 /* PortraitNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitNavController.swift; sourceTree = "<group>"; };
+		33A6DA372485824400EAFA09 /* myBlurHomePage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = myBlurHomePage.mp4; sourceTree = "<group>"; };
+		33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = FinalHomePage.mov; path = ../../../../../../../Documents/FinalHomePage.mov; sourceTree = "<group>"; };
 		33E5FF14245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSignedOrchardTableViewController.swift; sourceTree = "<group>"; };
 		33E5FFB52464707C0012A9A3 /* OrchardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrchardMain.storyboard; sourceTree = "<group>"; };
 		33E5FFBA246472E70012A9A3 /* Anotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anotation.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		33E76AC02425178700380428 /* MessageFirebaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFirebaseUITests.swift; sourceTree = "<group>"; };
 		33E76AC22425178700380428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33E76ACE24251CED00380428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33EE32D8247C19590073FB48 /* homepage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = homepage.mp4; sourceTree = "<group>"; };
 		D62449CE789075E38722E332 /* Pods-MessageFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageFirebase.debug.xcconfig"; path = "Target Support Files/Pods-MessageFirebase/Pods-MessageFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		F18F8870E84EA0791A3B44D5 /* Pods-MessageFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageFirebase.release.xcconfig"; path = "Target Support Files/Pods-MessageFirebase/Pods-MessageFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +198,9 @@
 		334997C5242D39460082835D /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				33EE32D8247C19590073FB48 /* homepage.mp4 */,
+				33A6DA372485824400EAFA09 /* myBlurHomePage.mp4 */,
+				33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */,
 				334997C6242D3B0B0082835D /* fieldTouchVideo.mp4 */,
 			);
 			path = Media;
@@ -423,11 +431,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E76AAB2425178700380428 /* LaunchScreen.storyboard in Resources */,
+				33EE32D9247C1F9A0073FB48 /* homepage.mp4 in Resources */,
 				33E76ACF24251CED00380428 /* GoogleService-Info.plist in Resources */,
 				335FC71B246BEDA40063E93D /* UserBoard.storyboard in Resources */,
 				33E5FFB62464707C0012A9A3 /* OrchardMain.storyboard in Resources */,
 				33E76AA82425178700380428 /* Assets.xcassets in Resources */,
 				334997C7242D3B0B0082835D /* fieldTouchVideo.mp4 in Resources */,
+				33A6DA3D2485917F00EAFA09 /* FinalHomePage.mov in Resources */,
 				33E76AA62425178600380428 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

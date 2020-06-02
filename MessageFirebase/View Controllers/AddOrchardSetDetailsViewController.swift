@@ -20,6 +20,7 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     @IBOutlet weak var DetailsAboutOrchardTextField: UITextField!
     
     
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return .portrait
     }
@@ -54,10 +55,14 @@ class AddOrchardSetDetailsViewController:  UIViewController {
 //           // show an alert
 //           return
 //        }
-        performSegue(withIdentifier: "addOrchardSegue", sender: nil
+        if validateFields(){
+            performSegue(withIdentifier: "addOrchardSegue", sender: nil)
+            //  [orchardName, orchardFruits,contactNumber,detailsAboutOrchard]
+
+        }
+
             
-          //  [orchardName, orchardFruits,contactNumber,detailsAboutOrchard]
-        )
+        
     }
     
     func setUpElements(){
@@ -70,19 +75,28 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         Utilities.styleFilledButton(nextPageButton)
     }
     
-    func validateFields() -> String?{
-        
+    func validateFields() -> Bool{
+        nextPageButton.isEnabled = false
+
         //check that all fields are filled in
         if
-            OrchardNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+              OrchardNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
                 OrchadFruitsTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
                 descriptionTextView.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
-                ContactNumberTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
+                ContactNumberTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" ||
+                descriptionTextView.text == "you may set a description for your orchard here"
         {
-            return "please fill in all fields"
+            //descriptionTextView.textColor = .red
+            //descriptionTextView.text == "*you may set a description for your orchard here*"
+            let err = "please fill all the fields"
+            //showError(title: err)
+            return false
             
         }
-        return nil
+        nextPageButton.isEnabled = true
+
+        return true
+        
     }
     
     
@@ -95,20 +109,20 @@ class AddOrchardSetDetailsViewController:  UIViewController {
       nextPageButton.isEnabled = false
         guard let first = textFields[0].text, first.count > 2 else {
             print("textField 1 is empty")
-        textFields[0].placeholder = "*"
-        textFields[0].textColor = .red
+        //textFields[0].placeholder = "*"
+        //textFields[0].textColor = .red
             return
         }
         guard let second = textFields[1].text, second != "" else {
             print("textField 2 is empty")
-            textFields[1].placeholder = "*"
-            textFields[1].textColor = .red
+            //textFields[1].placeholder = "*"
+            //textFields[1].textColor = .red
             return
         }
         guard let third = textFields[2].text, third != "" else {
             print("textField 3 is empty")
-            textFields[2].placeholder = "*"
-            textFields[2].textColor = .red
+            //textFields[2].placeholder = "*"
+            //textFields[2].textColor = .red
             return
         }
         
@@ -119,9 +133,18 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         nextPageButton.isEnabled = true
 
     }
+    
+    weak var window: UIWindow? //window show login, window show chat
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        validateFields()
         
+        let sb = UIStoryboard(name: "UserBoard", bundle: .main)
+        //print("To OrchardMain")
+
+        sb.instantiateInitialViewController()
+        self.window?.rootViewController = sb.instantiateInitialViewController()
         
         
         setUpElements()
@@ -130,8 +153,11 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         for textfield in textFields {
           textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
+        
+        
         // Do any additional setup after loading the view.
     }
+        
     
     
 
@@ -158,6 +184,8 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         }
     }
 }
+
+
 
 //extension AddOrchardSetDetailsViewController: EditingFinish{
 //    func didFinish(isFinish: Bool) {
