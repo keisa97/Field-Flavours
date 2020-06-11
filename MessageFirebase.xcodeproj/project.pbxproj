@@ -15,7 +15,6 @@
 		334997C0242D1D370082835D /* Pods_MessageFirebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDB9BBDF904CE0586C8BD5C /* Pods_MessageFirebase.framework */; };
 		334997C1242D1D370082835D /* Pods_MessageFirebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0CDB9BBDF904CE0586C8BD5C /* Pods_MessageFirebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		334997C4242D32970082835D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334997C3242D32970082835D /* Constants.swift */; };
-		334997C7242D3B0B0082835D /* fieldTouchVideo.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 334997C6242D3B0B0082835D /* fieldTouchVideo.mp4 */; };
 		335FC70F246AB6320063E93D /* AddOrchardSetDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FC70E246AB6320063E93D /* AddOrchardSetDetailsViewController.swift */; };
 		335FC711246AB6720063E93D /* AddOrchardLocationAndImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FC710246AB6720063E93D /* AddOrchardLocationAndImageViewController.swift */; };
 		335FC713246AF6AE0063E93D /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FC712246AF6AE0063E93D /* FirebaseModel.swift */; };
@@ -24,6 +23,7 @@
 		335FC71B246BEDA40063E93D /* UserBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 335FC71A246BEDA40063E93D /* UserBoard.storyboard */; };
 		335FC71D246BF54A0063E93D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FC71C246BF54A0063E93D /* Router.swift */; };
 		335FC7212471304A0063E93D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335FC7202471304A0063E93D /* MapViewController.swift */; };
+		33641802249244C900DB1EED /* text.text in Resources */ = {isa = PBXBuildFile; fileRef = 33641801249244C900DB1EED /* text.text */; };
 		337A72FE24378078006D91C4 /* RoundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337A72FD24378078006D91C4 /* RoundImageView.swift */; };
 		3386B609242FA43100B09ACB /* OrchardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386B608242FA43100B09ACB /* OrchardTableViewController.swift */; };
 		3386B60B242FA47800B09ACB /* OrchardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386B60A242FA47800B09ACB /* OrchardTableViewCell.swift */; };
@@ -46,7 +46,6 @@
 		33E76AB62425178700380428 /* MessageFirebaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E76AB52425178700380428 /* MessageFirebaseTests.swift */; };
 		33E76AC12425178700380428 /* MessageFirebaseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E76AC02425178700380428 /* MessageFirebaseUITests.swift */; };
 		33E76ACF24251CED00380428 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33E76ACE24251CED00380428 /* GoogleService-Info.plist */; };
-		33EE32D9247C1F9A0073FB48 /* homepage.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 33EE32D8247C19590073FB48 /* homepage.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,7 +87,6 @@
 		334997B9242CF72D0082835D /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		334997BD242D0F940082835D /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		334997C3242D32970082835D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		334997C6242D3B0B0082835D /* fieldTouchVideo.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = fieldTouchVideo.mp4; sourceTree = "<group>"; };
 		335FC70E246AB6320063E93D /* AddOrchardSetDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrchardSetDetailsViewController.swift; sourceTree = "<group>"; };
 		335FC710246AB6720063E93D /* AddOrchardLocationAndImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrchardLocationAndImageViewController.swift; sourceTree = "<group>"; };
 		335FC712246AF6AE0063E93D /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
@@ -97,13 +95,13 @@
 		335FC71A246BEDA40063E93D /* UserBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UserBoard.storyboard; sourceTree = "<group>"; };
 		335FC71C246BF54A0063E93D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		335FC7202471304A0063E93D /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		33641801249244C900DB1EED /* text.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = text.text; sourceTree = "<group>"; };
 		337A72FD24378078006D91C4 /* RoundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundImageView.swift; sourceTree = "<group>"; };
 		3386B608242FA43100B09ACB /* OrchardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchardTableViewController.swift; sourceTree = "<group>"; };
 		3386B60A242FA47800B09ACB /* OrchardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchardTableViewCell.swift; sourceTree = "<group>"; };
 		3386B60C242FA77100B09ACB /* Orchard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orchard.swift; sourceTree = "<group>"; };
 		3386B68E243205EC00B09ACB /* AddOrchadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrchadViewController.swift; sourceTree = "<group>"; };
 		3399FCC4247173C500652606 /* PortraitNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitNavController.swift; sourceTree = "<group>"; };
-		33A6DA372485824400EAFA09 /* myBlurHomePage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = myBlurHomePage.mp4; sourceTree = "<group>"; };
 		33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = FinalHomePage.mov; path = ../../../../../../../Documents/FinalHomePage.mov; sourceTree = "<group>"; };
 		33E5FF14245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSignedOrchardTableViewController.swift; sourceTree = "<group>"; };
 		33E5FFB52464707C0012A9A3 /* OrchardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrchardMain.storyboard; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 		33E76AC02425178700380428 /* MessageFirebaseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFirebaseUITests.swift; sourceTree = "<group>"; };
 		33E76AC22425178700380428 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33E76ACE24251CED00380428 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		33EE32D8247C19590073FB48 /* homepage.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = homepage.mp4; sourceTree = "<group>"; };
 		D62449CE789075E38722E332 /* Pods-MessageFirebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageFirebase.debug.xcconfig"; path = "Target Support Files/Pods-MessageFirebase/Pods-MessageFirebase.debug.xcconfig"; sourceTree = "<group>"; };
 		F18F8870E84EA0791A3B44D5 /* Pods-MessageFirebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageFirebase.release.xcconfig"; path = "Target Support Files/Pods-MessageFirebase/Pods-MessageFirebase.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,10 +195,7 @@
 		334997C5242D39460082835D /* Media */ = {
 			isa = PBXGroup;
 			children = (
-				33EE32D8247C19590073FB48 /* homepage.mp4 */,
-				33A6DA372485824400EAFA09 /* myBlurHomePage.mp4 */,
 				33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */,
-				334997C6242D3B0B0082835D /* fieldTouchVideo.mp4 */,
 			);
 			path = Media;
 			sourceTree = "<group>";
@@ -212,6 +206,14 @@
 				335FC718246BEBCA0063E93D /* UIviewController + extensions.swift */,
 			);
 			path = extensions;
+			sourceTree = "<group>";
+		};
+		33641800249244AC00DB1EED /* text */ = {
+			isa = PBXGroup;
+			children = (
+				33641801249244C900DB1EED /* text.text */,
+			);
+			path = text;
 			sourceTree = "<group>";
 		};
 		33E5FF16245C4E120012A9A3 /* tableViews */ = {
@@ -268,6 +270,7 @@
 		33E76A9D2425178600380428 /* MessageFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				33641800249244AC00DB1EED /* text */,
 				335FC717246BEB930063E93D /* extensions */,
 				33E5FFC22464BF860012A9A3 /* storyBoards */,
 				33E5FFB9246472D60012A9A3 /* model */,
@@ -431,12 +434,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33E76AAB2425178700380428 /* LaunchScreen.storyboard in Resources */,
-				33EE32D9247C1F9A0073FB48 /* homepage.mp4 in Resources */,
+				33641802249244C900DB1EED /* text.text in Resources */,
 				33E76ACF24251CED00380428 /* GoogleService-Info.plist in Resources */,
 				335FC71B246BEDA40063E93D /* UserBoard.storyboard in Resources */,
 				33E5FFB62464707C0012A9A3 /* OrchardMain.storyboard in Resources */,
 				33E76AA82425178700380428 /* Assets.xcassets in Resources */,
-				334997C7242D3B0B0082835D /* fieldTouchVideo.mp4 in Resources */,
 				33A6DA3D2485917F00EAFA09 /* FinalHomePage.mov in Resources */,
 				33E76AA62425178600380428 /* Main.storyboard in Resources */,
 			);

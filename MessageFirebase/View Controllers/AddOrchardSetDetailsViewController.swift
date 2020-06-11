@@ -11,13 +11,19 @@ import FirebaseAuth
 
 class AddOrchardSetDetailsViewController:  UIViewController {
 
+    var orchard : OrchardModel?
+    //var orchardName : String = ""
+    
+    var editMode: Bool = false
+
+    
     @IBOutlet weak var OrchardNameTextField: UITextField!
     
     @IBOutlet weak var OrchadFruitsTextField: UITextField!
     
     @IBOutlet weak var ContactNumberTextField: UITextField!
     
-    @IBOutlet weak var DetailsAboutOrchardTextField: UITextField!
+    //@IBOutlet weak var DetailsAboutOrchardTextField: UITextField!
     
     
     
@@ -43,6 +49,9 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     }
     
     @IBOutlet weak var nextPageButton: UIButton!
+    
+    func editModeIsOn() {
+                OrchardNameTextField.isUserInteractionEnabled = false    }
     
     @IBAction func NextPageButton(_ sender: UIButton) {
         
@@ -100,7 +109,24 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     }
     
     
-
+    func checkForEditMode(){
+        if editMode {
+            OrchardNameTextField.text = orchard?.orchadName
+            
+            OrchadFruitsTextField.text = orchard?.fruitsAvailable
+            
+            ContactNumberTextField.text = orchard?.contactNumber
+            
+            descriptionTextView.text = orchard?.orchardDescription
+        }else{
+          OrchardNameTextField.text = ""
+          OrchadFruitsTextField.text =  ""
+          ContactNumberTextField.text = ""
+          descriptionTextView.text =  ""
+            
+        }
+        
+    }
 
     var textFields : [UITextField] = []
     
@@ -138,6 +164,12 @@ class AddOrchardSetDetailsViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let topController = UIApplication.topViewController() {
+                // navigate to the root
+            topController.navigationController?.popViewController(animated: true)
+        }
+        
         validateFields()
         
         let sb = UIStoryboard(name: "UserBoard", bundle: .main)
@@ -148,10 +180,15 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         
         
         setUpElements()
+        checkForEditMode()
         
         textFields  = [OrchardNameTextField, OrchadFruitsTextField, ContactNumberTextField]
         for textfield in textFields {
           textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        }
+        
+        if editMode {
+            editModeIsOn()
         }
         
         
@@ -175,12 +212,26 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addOrchardSegue" {
            let dest = segue.destination as! AddOrchardLocationAndImageViewController
+            if (editMode){
+                dest.seguedOrchard = OrchardModel(orchardOwnerID: orchard!.orchardOwnerID ,
+                                            orchadName: orchard?.orchadName as! String,
+                                            fruitsAvailable: OrchadFruitsTextField.text ?? orchard?.fruitsAvailable as! String,
+                                            orchardDescription: descriptionTextView.text ?? orchard?.orchardDescription as! String,
+                                            latitude: orchard!.latitude, longitude: orchard!.longitude,
+                                            contactNumber : ContactNumberTextField.text ??  orchard?.contactNumber as! String)
+// ,imageURL : orchard!.orchardImageBackgroundImageURL as! String ?? "")
+                dest.editMode = true
+            
+                
+            }else{
+                
             dest.orchardName = OrchardNameTextField.text ?? ""
             dest.orchardFruits = OrchadFruitsTextField.text ?? ""
             dest.contactNumber = ContactNumberTextField.text ?? ""
             dest.detailsAboutOrchard = descriptionTextView.text ?? ""
             //dest.delegate = self
-            
+            }
+
         }
     }
 }
@@ -196,3 +247,20 @@ class AddOrchardSetDetailsViewController:  UIViewController {
 //    }
 //}
 
+
+extension UIApplication {
+    class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let navigationController = controller as? UINavigationController {
+            return topViewController(controller: navigationController.visibleViewController)
+        }
+        if let tabController = controller as? UITabBarController {
+            if let selected = tabController.selectedViewController {
+                return topViewController(controller: selected)
+            }
+        }
+        if let presented = controller?.presentedViewController {
+            return topViewController(controller: presented)
+        }
+        return controller
+    }
+}

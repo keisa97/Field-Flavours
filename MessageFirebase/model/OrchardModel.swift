@@ -23,6 +23,7 @@ class OrchardModel : FirebaseModel{
     var longitude: Double
     let contactNumber: String
     let createdDate: Date
+    let snapshotKey: String
     
     
     //for write
@@ -34,6 +35,7 @@ class OrchardModel : FirebaseModel{
                     "latitude" : latitude,
                     "longitude" : longitude,
                     "contactNumber" : contactNumber,
+                    "snapshotKey" : (UUID().uuidString),
                     "createdDate":Self.formatter.string(from: createdDate)] as [String : Any]
     
         if let imageURL = self.orchardImageBackgroundImageURL{
@@ -54,6 +56,7 @@ class OrchardModel : FirebaseModel{
         self.latitude = latitude
         self.longitude = longitude
         self.contactNumber = contactNumber
+        self.snapshotKey = .init()
         self.createdDate = .init()
         self.orchardImageBackgroundImageURL = orchardBackgroundImageURL
     }
@@ -67,6 +70,7 @@ class OrchardModel : FirebaseModel{
             let latitude = dict["latitude"] as? Double,
             let longitude = dict["longitude"] as? Double,
             let contactNumber = dict["contactNumber"] as? String,
+            let snapshotKey = dict["snapshotKey"] as? String,
             let dateString = dict["createdDate"] as? String,
             let createdDate = Self.formatter.date(from: dateString)
             else {
@@ -83,6 +87,7 @@ class OrchardModel : FirebaseModel{
         self.latitude = latitude
         self.longitude = longitude
         self.contactNumber = contactNumber
+        self.snapshotKey = snapshotKey
         self.createdDate = createdDate
 
         //imageURL is optional (so it's not guarded) (nice to have)
@@ -118,7 +123,9 @@ extension OrchardModel{
     func save(callback: @escaping (Error?, Bool)-> Void){
         //save to db:
         //can use also Self.ref
-        OrchardModel.ref.child(UUID().uuidString).setValue(dict) { [weak self] (err, dbRef) in
+        var fileName = self.orchardOwnerID + self.orchadName.replacingOccurrences(of: " ", with: "")
+        print(self.snapshotKey)
+        OrchardModel.ref.child(fileName).setValue(dict) { [weak self] (err, dbRef) in
             if let err = err{
                 callback(err, false)
                 return
@@ -160,4 +167,56 @@ extension OrchardModel{
             }
             
         }
+    
+    func update(snapshotKey:String, callback: @escaping (Error?, Bool)-> Void){
+        //save to db:
+        //can use also Self.ref
+        var fileName = self.orchardOwnerID + self.orchadName.replacingOccurrences(of: " ", with: "")
+        print(self.snapshotKey)
+        OrchardModel.ref.child(fileName).updateChildValues(dict) { [weak self] (err, dbRef) in
+            if let err = err{
+                callback(err, false)
+                return
+            }
+            callback(nil , true)//tell the listener
+        }
+    }
+    func update(image: UIImage,snapshotKey:String, callback : @escaping (Error?, Bool)-> Void){
+        //convert image to data:
+        guard let data = image.jpegData(compressionQuality: 0.1) else{
+            callback(nil, false)//cant save  image
+            return
+        }
+        //upload
+        imageRef.putData(data, metadata: nil) { (metadata, err) in
+            if let err = err{
+                callback(err, false)
+                return
+            }
+            //the image is saved:
+            //now save the data:
+            
+            //db:
+            var imageName = self.orchardOwnerID + self.orchadName.replacingOccurrences(of: " ", with: "")
+            self.orchardImageBackgroundImageURL = imageName + ".jpg"// if.jpg
+            
+            self.update(snapshotKey: snapshotKey, callback: callback)
+    //            ChatRoom.ref.child(self.id).setValue(self.dict) { (err, dbRef) in
+    //                if let err = err{
+    //                    callback(err, false)
+    //                    return
+    //                }
+    //                callback(nil , true)
+    //            }
+            }
+            
+        }
+
+    
+    
+    func deleteUserCell(){
+
+    }
 }
+
+

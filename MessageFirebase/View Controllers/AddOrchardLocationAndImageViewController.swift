@@ -12,6 +12,9 @@ import FirebaseAuth
 
 class AddOrchardLocationAndImageViewController: UIViewController {
 
+    
+    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return .portrait
     }
@@ -81,13 +84,17 @@ class AddOrchardLocationAndImageViewController: UIViewController {
     
     var orchardBackgroundImage = UIImage()
     
-    var orchardName : String = ""
-    var orchardFruits : String = ""
-    var contactNumber : String = ""
-    var detailsAboutOrchard :String = ""
+    var seguedOrchard : OrchardModel?
+    var finalOrchard : OrchardModel?
+    var editMode: Bool = false
+    
+    var orchardName : String!
+    var orchardFruits : String!
+    var contactNumber : String!
+    var detailsAboutOrchard :String!
     
     
-    @IBOutlet weak var finishAndUpload: UIButton!
+    @IBOutlet weak var btnFinishAndUpload: UIButton!
     
     @IBAction func finishAndUpload(_ sender: UIButton) {
         guard let user = Auth.auth().currentUser else {
@@ -96,13 +103,20 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         }
         showProgress()
         
-        let orchard = OrchardModel(orchardOwnerID: user.uid ,
+        
+        if (editMode){
+            finalOrchard = seguedOrchard
+        }else{
+            
+            finalOrchard = OrchardModel(orchardOwnerID: user.uid ,
                                    orchadName: orchardName,
                                    fruitsAvailable: orchardFruits,
                                    orchardDescription: detailsAboutOrchard,
                                    latitude: latitude, longitude: longitude,
                                    contactNumber : contactNumber)
         
+        print(finalOrchard)
+            }
         func afterOrchardSaved(_ err : Error?, _ success: Bool){
             if success{
                 self.showSuccess()
@@ -118,26 +132,54 @@ class AddOrchardLocationAndImageViewController: UIViewController {
             }
         }
         
+        if editMode {
+            var snapshotKey = finalOrchard!.orchardOwnerID + (finalOrchard?.orchadName.replacingOccurrences(of: " ", with: ""))! ?? ""
+
+            if let image = orchardImage.image{
+                //we have an image:
+                finalOrchard?.update(image: image, snapshotKey: snapshotKey, callback: afterOrchardSaved(_:_:))
+            }else{
+                //we got no image so use default image:
+                finalOrchard?.update(snapshotKey: snapshotKey, callback: afterOrchardSaved(_:_:))
+            }
+        }
+        
         
         if let image = orchardImage.image{
             //we have an image:
-            orchard.save(image: image, callback: afterOrchardSaved(_:_:))
+            finalOrchard?.save(image: image, callback: afterOrchardSaved(_:_:))
         }else{
             //we got no image so use default image:
-            orchard.save(callback: afterOrchardSaved(_:_:))
+            finalOrchard?.save(callback: afterOrchardSaved(_:_:))
         }
     }
+    
+    func setEditModeFields(){
+        
+        let ref = seguedOrchard?.imageRef
+//        //if we have an image load it
+        if let _ = seguedOrchard?.orchardImageBackgroundImageURL{
+            orchardImage.sd_setImage(with: ref!)
+        }
+    }
+    
     
     func setUpElements(){
         //errorLabel.alpha = 0
         Utilities.pickButton(pickPhoto)
-        Utilities.styleFilledButton(finishAndUpload)
+        Utilities.styleFilledButton(btnFinishAndUpload)
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
+        print( "editmode:" ,editMode)
+        if (editMode){
+            btnFinishAndUpload.setTitle("Finish Edits ✔︎", for: .normal)
+            setEditModeFields()
+            
+        }
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         self.view.addGestureRecognizer(tap)
@@ -147,8 +189,10 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         mapView.showsUserLocation = LocationManager.shared.hasLocationPermission
         
         mapView.delegate = self
+        searchController.searchBar.searchTextField.backgroundColor = .lightText
         //be the search delegate:
         searchController.searchBar.delegate = self
+        
         
         //add the seatch to our nav controller
         navigationItem.searchController = searchController

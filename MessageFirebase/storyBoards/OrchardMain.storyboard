@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LHw-8O-0k5">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,45 +11,45 @@
             <objects>
                 <viewController storyboardIdentifier="DetailsViewController" id="Kcf-Lk-AIl" customClass="DetailsViewController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Dz-6w-rwx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DetailsPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="f96-rl-hF6" customClass="RoundImageView" customModule="MessageFirebase" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ogh-tH-ZM2" customClass="RoundImageView" customModule="MessageFirebase" customModuleProvider="target">
-                                <rect key="frame" x="25" y="116" width="364" height="672"/>
+                                <rect key="frame" x="25" y="72" width="550" height="454"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BwO-rK-K1c">
-                                <rect key="frame" x="45" y="144" width="324" height="664"/>
+                                <rect key="frame" x="45" y="100" width="510" height="446"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OrchardName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNm-A8-0a5">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="510" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fruits" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54r-w9-hui">
-                                        <rect key="frame" x="0.0" y="62" width="324" height="36"/>
+                                        <rect key="frame" x="0.0" y="62" width="510" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rLm-9A-8mB">
-                                        <rect key="frame" x="0.0" y="118" width="324" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="118" width="510" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZeP-hv-AnO">
-                                        <rect key="frame" x="0.0" y="158.5" width="324" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="158.5" width="510" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sny-xv-58v">
-                                        <rect key="frame" x="0.0" y="199" width="324" height="465"/>
+                                        <rect key="frame" x="0.0" y="199" width="510" height="247"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Navigate ➢"/>
                                         <connections>
@@ -81,7 +80,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="f96-rl-hF6" id="Gtx-gt-Cuz"/>
                         <outlet property="contactNUmberLabel" destination="rLm-9A-8mB" id="kaf-6e-XHj"/>
-                        <outlet property="detailsLabel" destination="ZeP-hv-AnO" id="VD7-WV-yEz"/>
+                        <outlet property="descriptionLabel" destination="ZeP-hv-AnO" id="VD7-WV-yEz"/>
                         <outlet property="fruitsLabel" destination="54r-w9-hui" id="K1V-ie-Zuy"/>
                         <outlet property="orchardNameLabel" destination="tNm-A8-0a5" id="Ch5-p4-W1K"/>
                     </connections>
@@ -95,33 +94,33 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="Nep-Qb-QeY" customClass="UnSignedOrchardTableViewController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="BGZ-d8-1cK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OrchardCell" rowHeight="170" id="0GI-FQ-qbN" customClass="OrchardTableViewCell" customModule="MessageFirebase" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="170"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="170"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0GI-FQ-qbN" id="fSA-mG-3vr">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="170"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="170"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Dg-DA-cbf">
-                                            <rect key="frame" x="20" y="11" width="374" height="148"/>
+                                            <rect key="frame" x="20" y="11" width="560" height="148"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orachad item backround" translatesAutoresizingMaskIntoConstraints="NO" id="YL9-tp-9y6" customClass="RoundImageView" customModule="MessageFirebase" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="8" width="398" height="154"/>
+                                            <rect key="frame" x="8" y="8" width="584" height="154"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="162" id="p3s-9n-IKg"/>
                                             </constraints>
                                         </imageView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kw5-Ke-Qaa" customClass="RoundImageView" customModule="MessageFirebase" customModuleProvider="target">
-                                            <rect key="frame" x="30" y="21" width="354" height="128"/>
+                                            <rect key="frame" x="30" y="21" width="540" height="128"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="הפרדס של שחר" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ZK-Oc-osq">
-                                            <rect key="frame" x="50" y="31" width="314" height="36"/>
+                                            <rect key="frame" x="50" y="31" width="500" height="36"/>
                                             <fontDescription key="fontDescription" name="GillSans-SemiBoldItalic" family="Gill Sans" pointSize="30"/>
                                             <color key="textColor" red="0.3777020204" green="0.28450138790000001" blue="0.1763412805" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -133,7 +132,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRE-84-fTm">
-                                            <rect key="frame" x="334" y="93" width="30" height="36"/>
+                                            <rect key="frame" x="520" y="93" width="30" height="36"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="🌍"/>
                                             <connections>
@@ -237,11 +236,11 @@
             <objects>
                 <viewController id="1J6-4a-5sE" customClass="MapViewController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1y9-ez-2We">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YC1-vh-WLg">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <connections>
                                     <outlet property="delegate" destination="1J6-4a-5sE" id="YgJ-gj-GDW"/>
                                 </connections>

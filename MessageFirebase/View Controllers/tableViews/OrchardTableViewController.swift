@@ -8,10 +8,13 @@
 
 import UIKit
 import FirebaseAuth
-
+import FirebaseDatabase
 class OrchardTableViewController: UITableViewController {
 
+    var databaseQuery : DatabaseReference!
     var orchards = [OrchardModel]()
+    var snapshotKey: String?
+    
     
     @IBOutlet var ourTableView: UITableView!
     
@@ -36,10 +39,24 @@ class OrchardTableViewController: UITableViewController {
         
         //for get only user orchards we use :
         // .queryOrdered(byChild: "orchardOwnerID").queryEqual(toValue: user.uid) to our ref
-        OrchardModel.ref.queryOrdered(byChild: "orchardOwnerID").queryEqual(toValue: user.uid).observe(.childAdded){[weak self] (snapshot)in
+        
+        if (user != nil){
+            databaseQuery == OrchardModel.ref.queryOrdered(byChild: "orchardOwnerID")
+        }
+        
+//        guard databaseQuery == OrchardModel.ref.queryOrdered(byChild: "orchardOwnerID")else{
+//            return
+//        }
+        OrchardModel.ref.queryOrdered(byChild: "orchardOwnerID")
+            .queryEqual(toValue: user.uid).observe(.childAdded){[weak self] (snapshot)in
             guard let dict = snapshot.value as? [String:Any],
                 let orchard = OrchardModel(dict: dict) else{ return }
-            
+                
+                print("keys: ", snapshot.key)
+                self?.snapshotKey = snapshot.key
+                print("first table show", self?.databaseQuery,
+                      orchard)
+                
             //add the room to the array:
             self?.orchards.append(orchard)
             guard let strongSelf = self else{return}
@@ -47,6 +64,12 @@ class OrchardTableViewController: UITableViewController {
             let path = IndexPath(row: strongSelf.orchards.count - 1 ?? 0, section: 0)
             self?.tableView.insertRows(at: [path], with: .automatic)
         }
+        
+        
+        
+        
+        
+        
 
 //        var test = OrchardDataSource()
 //        test.loadOrchards {[weak self] (arrGotten) in
@@ -62,8 +85,27 @@ class OrchardTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.leftBarButtonItem = self.editButtonItem
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
     }
+    
+//    func deleteOrchard(){
+//        guard let user = Auth.auth().currentUser else {return}
+//        print(databaseQuery)
+//
+//
+//        //#1try
+//
+//        databaseQuery.queryEqual(toValue: user.uid).observeSingleEvent(of: .childRemoved){[weak self] (snapshot)in
+//                    guard let dict = snapshot.value as? [String:Any],
+//                        let orchard = OrchardModel(dict: dict) else{ return }
+//            print("delete row show", self?.databaseQuery,
+//                                 orchard)
+//            guard let strongSelf = self else{return}
+//            //tell the table view : (tableview.insertRows)
+//            let path = IndexPath(row: indexPath.row ?? 0, section: 0)
+//            self?.tableView.deleteRows(at: [path], with: .automatic)
+//        }
+//    }
 
     // MARK: - Table view data source
 
@@ -120,25 +162,91 @@ class OrchardTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
+            print(#function , "first action in delete!")
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            //let action = fetc
+            guard let user = Auth.auth().currentUser else {return}
+            print(databaseQuery)
+            
+            print(OrchardModel.ref)
+            let childRef = orchards[indexPath.row].orchardOwnerID + orchards[indexPath.row].orchadName.replacingOccurrences(of: " ", with: "")
+            OrchardModel.ref.child(childRef).removeValue()
+            print("indexPath.row", indexPath.row)
+            let path = IndexPath(row: indexPath.row, section: 0)
+            print("orchards.count" , orchards.count)
+            self.orchards.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [path], with: .automatic)
+            //#1try
+            
+            OrchardModel.ref.observe(.childRemoved){[weak self] (snapshot)in
+                        guard let dict = snapshot.value as? [String:Any],
+                            let orchard = OrchardModel(dict: dict) else{ return }
+                print("delete row show", self?.databaseQuery,
+                                     orchard)
+                
+
+//                if (user != nil){
+//                    var fileName = orchard.orchardOwnerID + orchard.orchadName.replacingOccurrences(of: " ", with: "")
+//                    //tell the table view : (tableview.insertRows)
+//                    let path = IndexPath(row: indexPath.row, section: 0)
+//                    OrchardModel.ref.child(fileName).removeValue()
+//                    print("indexPath.row", indexPath.row)
+//                    self?.orchards.remove(at: indexPath.row)
+//                    self?.tableView.deleteRows(at: [path], with: .automatic)
+//                    //guard let strongSelf = self else{return}
+//                    //[strongSelf].removeObjectAtIndex;: [indexPath.row]
+//                    //orchards.remove[indexPath.row]
+//                }
+
+                //                let groceryItem = self?.orchards[indexPath.row]
+//                groceryItem.self
+                
+                //mileageDatabase.remove[indexPath.row]
+                //self?.tableView.reloadData()
+            }
+
+            //#1try
+            
+            
+            
+//              // Get user value
+//              let value = snapshot.value as? NSDictionary
+//              let username = value?["username"] as? String ?? ""
+//              let user = User(username: username)
+//
+//              // ...
+//              }) { (error) in
+//                print(error.localizedDescription)
+//            }
+//            (.childRemoved){[weak self] (snapshot)in
+//            guard let dict = snapshot.value as? [String:Any],
+//                let orchard = OrchardModel(dict: dict) else{ return }
+//                self?.orchards.remove(at: indexPath.row)
+////                self?.databaseQuery.removeValue { error, _ in
+////
+////                    print(error)
+////                }
+//            }
+            
+            
+            //tableView.deleteRows(at: [indexPath], with: .fade)
+//        } else if editingStyle == .insert {
+//            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

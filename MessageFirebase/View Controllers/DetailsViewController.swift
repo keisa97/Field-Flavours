@@ -10,7 +10,7 @@ import UIKit
 import SafariServices
 import FirebaseAuth
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBAction func Logout(_ sender: UIBarButtonItem) {
         do{
@@ -29,7 +29,7 @@ class DetailsViewController: UIViewController {
     
     @IBOutlet weak var fruitsLabel: UILabel!
     
-    @IBOutlet weak var detailsLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var contactNUmberLabel: UILabel!
     @IBOutlet weak var backgroundImageView: RoundImageView!
@@ -50,6 +50,22 @@ class DetailsViewController: UIViewController {
         }
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
+    
+    
+    
+    @IBAction func editOrchardBtn(_ sender: UIButton) {
+        let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
+        let vc = navController.topViewController as!AddOrchardSetDetailsViewController
+        
+        vc.orchard = orchard
+        vc.editMode = true
+        tabBarController?.selectedIndex = 1
+        vc.tabBarController?.delegate = self
+        //performSegue(withIdentifier: "updateOrchardSegue", sender: nil)
+
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -76,9 +92,9 @@ class DetailsViewController: UIViewController {
         fruitsLabel.text = orchard.fruitsAvailable
         
         contactNUmberLabel.text = "Contact number: \(orchard.contactNumber)"
-        detailsLabel.text = orchard.orchardDescription
+        descriptionLabel.text = orchard.orchardDescription
         //contactNUmberLabel.text 
-        //detailsLabel.text = landMark.shortDescription
+        //descriptionLabel.text = landMark.shortDescription
         
         let ref = orchard.imageRef
         //if we have an image load it
@@ -103,5 +119,23 @@ class DetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "updateOrchardSegue" {
+//           let dest = segue.destination as! AddOrchardSetDetailsViewController
+//            dest.editMode = true
+//            dest.orchard = orchard
+//            tabBarController?.selectedIndex = 1
+//            dest.tabBarController?.delegate = self
+////            dest.orchardName = orchardNameLabel.text ?? ""
+////            dest.OrchadFruitsTextField.text = fruitsLabel.text ?? ""
+////            dest.ContactNumberTextField.text = contactNUmberLabel.text ?? ""
+////            dest.descriptionTextView.text = descriptionLabel.text ?? ""
+//            
+//            //dest.delegate = self
+//            
+//        }
+//    }
 
 }
+
+

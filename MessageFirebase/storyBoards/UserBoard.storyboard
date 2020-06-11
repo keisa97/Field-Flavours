@@ -241,7 +241,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="finishAndUpload" destination="nhb-A3-NQn" id="DTC-8d-xra"/>
+                        <outlet property="btnFinishAndUpload" destination="nhb-A3-NQn" id="DTC-8d-xra"/>
                         <outlet property="mapView" destination="Ivp-2c-7X9" id="yjo-YY-Dh1"/>
                         <outlet property="orchardImage" destination="GGT-Bt-wRG" id="N4G-XS-yfS"/>
                         <outlet property="pickPhoto" destination="vVc-2V-Vpt" id="Sdh-Yk-oWT"/>
@@ -257,6 +257,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="osr-eD-TNO" customClass="PortraitNavController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="plus" catalog="system" id="GUd-fu-tql"/>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="boe-pe-kbS"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NDC-oA-4pm">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -282,42 +283,49 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kvx-DT-7fS" customClass="RoundImageView" customModule="MessageFirebase" customModuleProvider="target">
-                                <rect key="frame" x="25" y="116" width="364" height="672"/>
+                                <rect key="frame" x="25" y="113" width="364" height="675"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Nny-ho-4iH">
-                                <rect key="frame" x="45" y="144" width="324" height="664"/>
+                                <rect key="frame" x="40" y="123" width="334" height="650"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OrchardName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmV-jA-G0X">
-                                        <rect key="frame" x="0.0" y="0.0" width="324" height="42"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fruits" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aI8-eP-9dN">
-                                        <rect key="frame" x="0.0" y="62" width="324" height="36"/>
+                                        <rect key="frame" x="0.0" y="62" width="334" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lWD-qv-Xmt">
-                                        <rect key="frame" x="0.0" y="118" width="324" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="118" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pzm-0W-7Qf">
-                                        <rect key="frame" x="0.0" y="158.5" width="324" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="158.5" width="334" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-uI-CUQ">
-                                        <rect key="frame" x="0.0" y="199" width="324" height="465"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oNs-uI-CUQ">
+                                        <rect key="frame" x="0.0" y="199" width="334" height="401"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Navigate ➢"/>
                                         <connections>
                                             <action selector="Navigate:" destination="FNe-z0-QeU" eventType="touchUpInside" id="gX6-iR-YSc"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IrZ-NA-T1d">
+                                        <rect key="frame" x="0.0" y="620" width="334" height="30"/>
+                                        <state key="normal" title="Edit"/>
+                                        <connections>
+                                            <action selector="editOrchardBtn:" destination="FNe-z0-QeU" eventType="touchUpInside" id="j9i-dG-K6E"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -326,17 +334,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="YPF-lC-JYH" firstAttribute="leading" secondItem="G7P-IM-loL" secondAttribute="leading" id="0CJ-nW-TGd"/>
-                            <constraint firstItem="Nny-ho-4iH" firstAttribute="top" secondItem="Kvx-DT-7fS" secondAttribute="topMargin" constant="20" id="2Fw-3h-vPg"/>
-                            <constraint firstItem="Kvx-DT-7fS" firstAttribute="trailing" secondItem="Nny-ho-4iH" secondAttribute="trailing" constant="20" id="4uQ-dA-ew9"/>
                             <constraint firstItem="YPF-lC-JYH" firstAttribute="top" secondItem="G7P-IM-loL" secondAttribute="top" id="7Bz-Bm-fN3"/>
                             <constraint firstItem="G7P-IM-loL" firstAttribute="bottom" secondItem="YPF-lC-JYH" secondAttribute="bottom" id="95g-g2-Zce"/>
+                            <constraint firstItem="Kvx-DT-7fS" firstAttribute="top" secondItem="G7P-IM-loL" secondAttribute="top" constant="25" id="ADN-XU-kMH"/>
                             <constraint firstItem="G7P-IM-loL" firstAttribute="trailing" secondItem="YPF-lC-JYH" secondAttribute="trailing" id="HVm-LD-kG2"/>
-                            <constraint firstItem="Nny-ho-4iH" firstAttribute="bottom" secondItem="Kvx-DT-7fS" secondAttribute="bottom" constant="20" id="Q2l-nt-Hvz"/>
-                            <constraint firstItem="Kvx-DT-7fS" firstAttribute="leading" secondItem="G7P-IM-loL" secondAttribute="leading" constant="25" id="Uyo-WQ-2wk"/>
-                            <constraint firstItem="Kvx-DT-7fS" firstAttribute="top" secondItem="YPF-lC-JYH" secondAttribute="topMargin" constant="20" id="faC-fw-dsu"/>
-                            <constraint firstItem="G7P-IM-loL" firstAttribute="bottom" secondItem="Kvx-DT-7fS" secondAttribute="bottom" constant="25" id="g8i-cY-FXm"/>
-                            <constraint firstItem="Nny-ho-4iH" firstAttribute="leading" secondItem="Kvx-DT-7fS" secondAttribute="leading" constant="20" id="nkH-Aa-M2Z"/>
-                            <constraint firstItem="G7P-IM-loL" firstAttribute="trailing" secondItem="Kvx-DT-7fS" secondAttribute="trailing" constant="25" id="wnq-fX-oqV"/>
+                            <constraint firstItem="Kvx-DT-7fS" firstAttribute="leading" secondItem="G7P-IM-loL" secondAttribute="leading" constant="25" id="KpE-rp-hNu"/>
+                            <constraint firstItem="G7P-IM-loL" firstAttribute="bottom" secondItem="Kvx-DT-7fS" secondAttribute="bottom" constant="25" id="Nwi-9v-fxz"/>
+                            <constraint firstItem="Nny-ho-4iH" firstAttribute="leading" secondItem="G7P-IM-loL" secondAttribute="leading" constant="40" id="XJJ-UC-LSm"/>
+                            <constraint firstItem="G7P-IM-loL" firstAttribute="trailing" secondItem="Kvx-DT-7fS" secondAttribute="trailing" constant="25" id="btr-07-clK"/>
+                            <constraint firstItem="Nny-ho-4iH" firstAttribute="top" secondItem="G7P-IM-loL" secondAttribute="top" constant="35" id="eUz-rg-Eho"/>
+                            <constraint firstItem="G7P-IM-loL" firstAttribute="trailing" secondItem="Nny-ho-4iH" secondAttribute="trailing" constant="40" id="iw6-bt-1y5"/>
+                            <constraint firstItem="G7P-IM-loL" firstAttribute="bottom" secondItem="Nny-ho-4iH" secondAttribute="bottom" constant="40" id="wUn-0E-AJX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="G7P-IM-loL"/>
                     </view>
@@ -350,7 +358,7 @@
                     <connections>
                         <outlet property="backgroundImageView" destination="YPF-lC-JYH" id="xJJ-LJ-Pir"/>
                         <outlet property="contactNUmberLabel" destination="Pzm-0W-7Qf" id="tUZ-2s-iBf"/>
-                        <outlet property="detailsLabel" destination="lWD-qv-Xmt" id="RXX-de-NM8"/>
+                        <outlet property="descriptionLabel" destination="lWD-qv-Xmt" id="RXX-de-NM8"/>
                         <outlet property="fruitsLabel" destination="aI8-eP-9dN" id="Xra-eV-0DO"/>
                         <outlet property="orchardNameLabel" destination="NmV-jA-G0X" id="k5c-2Y-ZKw"/>
                     </connections>
