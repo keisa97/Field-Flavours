@@ -12,6 +12,23 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var showPassBtn: UIButton!
+    
+    @IBAction func showPass(_ sender: UIButton) {
+        
+        let secure = passwordTextField.isSecureTextEntry
+        
+        if secure {
+            showPassBtn.setTitle("👓", for: .normal)
+            secure == true
+        }else{
+            showPassBtn.setTitle("🕶", for: .normal)
+            secure == true
+        }
+        
+
+        
+    }
     @IBOutlet weak var emailTextField: UITextField!
     
     
@@ -40,8 +57,9 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
+        passwordTextField.isSecureTextEntry = true
         setUpElements()
         
     }

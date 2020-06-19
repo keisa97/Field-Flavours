@@ -23,6 +23,10 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var singUpButton: UIButton!
     
     
+    @IBAction func passwordTextFieldReturn(_ sender: UITextField) {
+        self.view.endEditing(true)
+        
+    }
     @IBOutlet weak var errorLabel: UILabel!
     
     func setUpElements(){
@@ -37,10 +41,12 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
         // Do any additional setup after loading the view.
         setUpElements()
-        
+//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
         
     }
     

@@ -137,6 +137,7 @@ class AddOrchardLocationAndImageViewController: UIViewController {
 
             if let image = orchardImage.image{
                 //we have an image:
+                print("image to update" ,image)
                 finalOrchard?.update(image: image, snapshotKey: snapshotKey, callback: afterOrchardSaved(_:_:))
             }else{
                 //we got no image so use default image:
@@ -156,10 +157,11 @@ class AddOrchardLocationAndImageViewController: UIViewController {
     
     func setEditModeFields(){
         
-        let ref = seguedOrchard?.imageRef
+        guard let ref = seguedOrchard?.imageRef else {return}
 //        //if we have an image load it
+        print("ref", ref)
         if let _ = seguedOrchard?.orchardImageBackgroundImageURL{
-            orchardImage.sd_setImage(with: ref!)
+            orchardImage.sd_setImage(with: ref)
         }
     }
     
@@ -187,11 +189,17 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         mapView.showsUserLocation = LocationManager.shared.hasLocationPermission
-        
+
         mapView.delegate = self
         searchController.searchBar.searchTextField.backgroundColor = .lightText
         //be the search delegate:
         searchController.searchBar.delegate = self
+        searchController.searchBar.isTranslucent = true
+
+        
+        self.extendedLayoutIncludesOpaqueBars = !self.navigationController!.navigationBar.isTranslucent
+        self.navigationController?.navigationBar.isHidden = false
+
         
         
         //add the seatch to our nav controller

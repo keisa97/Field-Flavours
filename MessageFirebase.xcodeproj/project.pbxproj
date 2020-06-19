@@ -31,6 +31,7 @@
 		3386B68F243205EC00B09ACB /* AddOrchadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3386B68E243205EC00B09ACB /* AddOrchadViewController.swift */; };
 		3399FCC5247173C500652606 /* PortraitNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3399FCC4247173C500652606 /* PortraitNavController.swift */; };
 		33A6DA3D2485917F00EAFA09 /* FinalHomePage.mov in Resources */ = {isa = PBXBuildFile; fileRef = 33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */; };
+		33CA808B249A57C100261A87 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CA808A249A57C100261A87 /* TabBarViewController.swift */; };
 		33E5FF15245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5FF14245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift */; };
 		33E5FFB62464707C0012A9A3 /* OrchardMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33E5FFB52464707C0012A9A3 /* OrchardMain.storyboard */; };
 		33E5FFBD246472E70012A9A3 /* Anotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E5FFBA246472E70012A9A3 /* Anotation.swift */; };
@@ -103,6 +104,7 @@
 		3386B68E243205EC00B09ACB /* AddOrchadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrchadViewController.swift; sourceTree = "<group>"; };
 		3399FCC4247173C500652606 /* PortraitNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortraitNavController.swift; sourceTree = "<group>"; };
 		33A6DA3C2485917F00EAFA09 /* FinalHomePage.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = FinalHomePage.mov; path = ../../../../../../../Documents/FinalHomePage.mov; sourceTree = "<group>"; };
+		33CA808A249A57C100261A87 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		33E5FF14245C4DF70012A9A3 /* UnSignedOrchardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnSignedOrchardTableViewController.swift; sourceTree = "<group>"; };
 		33E5FFB52464707C0012A9A3 /* OrchardMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OrchardMain.storyboard; sourceTree = "<group>"; };
 		33E5FFBA246472E70012A9A3 /* Anotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anotation.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				33E76AA42425178600380428 /* Main.storyboard */,
 				33E5FFB52464707C0012A9A3 /* OrchardMain.storyboard */,
 				335FC71A246BEDA40063E93D /* UserBoard.storyboard */,
+				33E76AA92425178700380428 /* LaunchScreen.storyboard */,
 			);
 			path = storyBoards;
 			sourceTree = "<group>";
@@ -283,10 +286,10 @@
 				33E76A9E2425178600380428 /* AppDelegate.swift */,
 				33E76AA02425178600380428 /* SceneDelegate.swift */,
 				33E76AA72425178700380428 /* Assets.xcassets */,
-				33E76AA92425178700380428 /* LaunchScreen.storyboard */,
 				33E76AAC2425178700380428 /* Info.plist */,
 				3386B60A242FA47800B09ACB /* OrchardTableViewCell.swift */,
 				3386B60C242FA77100B09ACB /* Orchard.swift */,
+				33CA808A249A57C100261A87 /* TabBarViewController.swift */,
 			);
 			path = MessageFirebase;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				334997B8242CF6A00082835D /* HomeViewController.swift in Sources */,
 				334997BE242D0F940082835D /* Utilities.swift in Sources */,
 				334997B6242CF6900082835D /* LoginViewController.swift in Sources */,
+				33CA808B249A57C100261A87 /* TabBarViewController.swift in Sources */,
 				335FC719246BEBCA0063E93D /* UIviewController + extensions.swift in Sources */,
 				33E76AA32425178600380428 /* ViewController.swift in Sources */,
 				3386B68F243205EC00B09ACB /* AddOrchadViewController.swift in Sources */,
@@ -708,6 +712,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4T543QQW4S;
 				INFOPLIST_FILE = MessageFirebase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -726,6 +731,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4T543QQW4S;
 				INFOPLIST_FILE = MessageFirebase/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

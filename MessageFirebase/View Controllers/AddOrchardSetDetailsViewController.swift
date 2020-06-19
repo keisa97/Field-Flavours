@@ -50,8 +50,7 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     
     @IBOutlet weak var nextPageButton: UIButton!
     
-    func editModeIsOn() {
-                OrchardNameTextField.isUserInteractionEnabled = false    }
+    
     
     @IBAction func NextPageButton(_ sender: UIButton) {
         
@@ -82,10 +81,16 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         Utilities.styleTextField(ContactNumberTextField)
         //Utilities.styleTextField(DetailsAboutOrchardTextField)
         Utilities.styleFilledButton(nextPageButton)
+        
     }
     
     func validateFields() -> Bool{
-        nextPageButton.isEnabled = false
+        if editMode {
+            nextPageButton.isEnabled = true}
+            else{
+                nextPageButton.isEnabled = false
+                }
+            
 
         //check that all fields are filled in
         if
@@ -111,6 +116,7 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     
     func checkForEditMode(){
         if editMode {
+            OrchardNameTextField.isUserInteractionEnabled = false
             OrchardNameTextField.text = orchard?.orchadName
             
             OrchadFruitsTextField.text = orchard?.fruitsAvailable
@@ -132,7 +138,11 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
       //set Button to false whenever they begin editing
-      nextPageButton.isEnabled = false
+        if (editMode){ nextPageButton.isEnabled = true }
+            else{
+                nextPageButton.isEnabled = false
+            }
+        
         guard let first = textFields[0].text, first.count > 2 else {
             print("textField 1 is empty")
         //textFields[0].placeholder = "*"
@@ -164,19 +174,31 @@ class AddOrchardSetDetailsViewController:  UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
 
-        if let topController = UIApplication.topViewController() {
-                // navigate to the root
-            topController.navigationController?.popViewController(animated: true)
-        }
+        print("orchard", orchard)
+        
+//        self.tabBarController?.view.reloadInputViews()
+//
+//
+//        self.navigationController?.dismiss(animated: true, completion: {
+//             self.navigationController?.popToRootViewController(animated: true)
+//        })
+//
+//
+//        if let topController = UIApplication.topViewController() {
+//                // navigate to the root
+//            topController.navigationController?.popToRootViewController(animated: true)
+//        }
+//        let sb = UIStoryboard(name: "UserBoard", bundle: .main)
+//        sb.instantiateInitialViewController()
+//        self.window?.rootViewController = sb.instantiateInitialViewController()
         
         validateFields()
         
-        let sb = UIStoryboard(name: "UserBoard", bundle: .main)
         //print("To OrchardMain")
 
-        sb.instantiateInitialViewController()
-        self.window?.rootViewController = sb.instantiateInitialViewController()
+        
         
         
         setUpElements()
@@ -187,15 +209,12 @@ class AddOrchardSetDetailsViewController:  UIViewController {
           textfield.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         }
         
-        if editMode {
-            editModeIsOn()
-        }
         
         
         // Do any additional setup after loading the view.
     }
-        
     
+        
     
 
     

@@ -33,6 +33,10 @@ class DetailsViewController: UIViewController, UITabBarControllerDelegate {
     
     @IBOutlet weak var contactNUmberLabel: UILabel!
     @IBOutlet weak var backgroundImageView: RoundImageView!
+    
+    
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var navigateBtn: UIButton!
     //    @IBAction func website(_ sender: UIButton) {
 //        guard let url =
 //            URL(string: landMark?.productURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else{return}
@@ -51,23 +55,90 @@ class DetailsViewController: UIViewController, UITabBarControllerDelegate {
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
-    
-    
-    @IBAction func editOrchardBtn(_ sender: UIButton) {
+    func editTransication(){
         let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
-        let vc = navController.topViewController as!AddOrchardSetDetailsViewController
+        navController.popToRootViewController(animated: true)
+        let vc = navController.topViewController
+            as!AddOrchardSetDetailsViewController
+        
+        
+        
         
         vc.orchard = orchard
         vc.editMode = true
         tabBarController?.selectedIndex = 1
         vc.tabBarController?.delegate = self
         //performSegue(withIdentifier: "updateOrchardSegue", sender: nil)
+    }
+    
+    
+    @IBAction func editOrchardBtn(_ sender: UIButton) {
+            
+        //editTransication()
+        
+//        let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
+//        //navigationController?.popToRootViewController(animated: true)
+//        navController.popToRootViewController(animated: true)
+//
+//        let vc = navController.topViewController as!AddOrchardSetDetailsViewController
+//
+//
+//        self.navigationController?.dismiss(animated: true, completion: {
+//             self.navigationController?.popToRootViewController(animated: true)
+//        })
+        
+//        let sb = UIStoryboard(name: "UserBoard", bundle: .main)
+//        guard let vc = sb.instantiateViewController(identifier: "UserBoard") as?
+//            AddOrchardSetDetailsViewController else {return}
+//        vc.modalPresentationStyle = .overCurrentContext
+//
+//
+//
+//        vc.orchard = orchard
+//        vc.editMode = true
+//        self.tabBarController?.view.reloadInputViews()
+//
+//        tabBarController?.selectedIndex = 1
+//        vc.tabBarController?.delegate = self
+//        present(vc, animated: true)
+//        view.window?.rootViewController = vc
+
+        //self.navigationController?.popToRootViewController(animated: true)
+//              self.tabBarController?.viewControllers![1] as! UINavigationController
+//
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "AddOrchardSetDetailsViewController") as? AddOrchardSetDetailsViewController
+//        view.window?.rootViewController = vc
+        
+        performSegue(withIdentifier: "updateOrchardSegue", sender: nil)
+        
+//        let addViewContoroller =
+//            self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.AddOrchardSetDetailsViewController) as? AddOrchardSetDetailsViewController
+//
+//        self.view.window?.rootViewController = addViewContoroller
+//        self.view.window?.makeKeyAndVisible()
+        
+        
+        
+        
+        
+        
+        
 
         
     }
     
+    func setUpElements() {
+        Utilities.styleFilledButton(navigateBtn)
+        if editBtn != nil {
+        Utilities.styleHollowButton(editBtn)
+
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setUpElements()
         
         navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
         navigationItem.leftItemsSupplementBackButton = true
@@ -135,6 +206,19 @@ class DetailsViewController: UIViewController, UITabBarControllerDelegate {
 //            
 //        }
 //    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "updateOrchardSegue" {
+               let dest = segue.destination as! AddOrchardSetDetailsViewController
+               
+    // ,imageURL : orchard!.orchardImageBackgroundImageURL as! String ?? "")
+                    dest.editMode = true
+                    dest.orchard = orchard
+                
+
+            }
+        }
 
 }
 
