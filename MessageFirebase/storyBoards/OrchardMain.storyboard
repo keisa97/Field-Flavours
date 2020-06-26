@@ -26,23 +26,36 @@
                                 <rect key="frame" x="40" y="203" width="334" height="455"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fruits" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr3-Ls-zmk">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="140"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="120.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="textColor" red="0.29027736939999998" green="0.21961531849999999" blue="0.1394469716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="details" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixt-nL-xgT">
-                                        <rect key="frame" x="0.0" y="160" width="334" height="79.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="0.0" y="140.5" width="334" height="80"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" red="0.29027736939999998" green="0.21961531849999999" blue="0.1394469716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mO-Og-AX3">
-                                        <rect key="frame" x="0.0" y="259.5" width="334" height="195.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.29027736939999998" green="0.21961531849999999" blue="0.1394469716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="65W-qU-LwJ">
+                                        <rect key="frame" x="0.0" y="240.5" width="334" height="214.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guU-8s-9jj">
+                                                <rect key="frame" x="0.0" y="0.0" width="146.5" height="214.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <color key="textColor" red="0.29027736939999998" green="0.21961531849999999" blue="0.1394469716" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Oh-IT-rI6">
+                                                <rect key="frame" x="146.5" y="0.0" width="187.5" height="214.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <state key="normal" title="✆"/>
+                                                <connections>
+                                                    <action selector="callBtn:" destination="Kcf-Lk-AIl" eventType="touchUpInside" id="lYY-cO-XBp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="OrchardName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RyA-UE-hYb">
@@ -94,7 +107,7 @@
                     <navigationItem key="navigationItem" id="Lxo-u7-WoU"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="f96-rl-hF6" id="Gtx-gt-Cuz"/>
-                        <outlet property="contactNUmberLabel" destination="5mO-Og-AX3" id="L57-jl-xlz"/>
+                        <outlet property="contactNUmberLabel" destination="guU-8s-9jj" id="cbm-Wj-Jrc"/>
                         <outlet property="descriptionLabel" destination="ixt-nL-xgT" id="ZZB-NU-n01"/>
                         <outlet property="fruitsLabel" destination="tr3-Ls-zmk" id="D7O-pC-SEI"/>
                         <outlet property="navigateBtn" destination="S9l-W3-Zmt" id="K0g-qJ-yqL"/>

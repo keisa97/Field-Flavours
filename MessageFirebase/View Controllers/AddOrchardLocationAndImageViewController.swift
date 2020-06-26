@@ -134,7 +134,10 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         
         if editMode {
             var snapshotKey = finalOrchard!.orchardOwnerID + (finalOrchard?.orchadName.replacingOccurrences(of: " ", with: ""))! ?? ""
-
+            
+            finalOrchard?.longitude = longitude
+            finalOrchard?.latitude = latitude
+            
             if let image = orchardImage.image{
                 //we have an image:
                 print("image to update" ,image)
@@ -159,6 +162,7 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         
         guard let ref = seguedOrchard?.imageRef else {return}
 //        //if we have an image load it
+        orchardImage.sd_setImage(with: ref)
         print("ref", ref)
         if let _ = seguedOrchard?.orchardImageBackgroundImageURL{
             orchardImage.sd_setImage(with: ref)
@@ -170,6 +174,23 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         //errorLabel.alpha = 0
         Utilities.pickButton(pickPhoto)
         Utilities.styleFilledButton(btnFinishAndUpload)
+    }
+    
+    //for annotation
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+
+        return annotationView
     }
     
 
@@ -194,7 +215,8 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         searchController.searchBar.searchTextField.backgroundColor = .lightText
         //be the search delegate:
         searchController.searchBar.delegate = self
-        searchController.searchBar.isTranslucent = true
+        searchController.searchBar.placeholder = "Choose location"
+        //searchController.searchBar.isTranslucent = true
 
         
         self.extendedLayoutIncludesOpaqueBars = !self.navigationController!.navigationBar.isTranslucent
@@ -202,12 +224,31 @@ class AddOrchardLocationAndImageViewController: UIViewController {
 
         
         
+        
         //add the seatch to our nav controller
         navigationItem.searchController = searchController
+//        searchController.hidesNavigationBarDuringPresentation = false
         
+//        searchController.definesPresentationContext = true
         print(orchardName,orchardFruits,contactNumber , detailsAboutOrchard)
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+            searchController.searchBar.delegate = self
+        if (editMode){
+            setEditModeFields()
+            let place = MKPointAnnotation()
+            place.title = "last location"
+            place.coordinate = CLLocationCoordinate2D(latitude: seguedOrchard!.latitude, longitude: seguedOrchard!.longitude)
+            mapView.addAnnotation(place)
+            
+        }
+        navigationItem.searchController?.isActive = true
+    }
+    
+    
     
     
 
@@ -224,6 +265,7 @@ class AddOrchardLocationAndImageViewController: UIViewController {
 }
 
 extension AddOrchardLocationAndImageViewController: UISearchBarDelegate{
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         //get the text
         guard let text = searchBar.text, text.count > 0 else {return}

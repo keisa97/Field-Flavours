@@ -22,10 +22,7 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     @IBOutlet weak var OrchadFruitsTextField: UITextField!
     
     @IBOutlet weak var ContactNumberTextField: UITextField!
-    
-    //@IBOutlet weak var DetailsAboutOrchardTextField: UITextField!
-    
-    
+        
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
         return .portrait

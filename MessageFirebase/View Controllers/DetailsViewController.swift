@@ -32,6 +32,14 @@ class DetailsViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     @IBOutlet weak var contactNUmberLabel: UILabel!
+    
+    @IBAction func callBtn(_ sender: UIButton) {
+        
+        
+        guard let number = URL(string: "tel://" + orchard!.contactNumber) else { return }
+        UIApplication.shared.open(number)
+    }
+    
     @IBOutlet weak var backgroundImageView: RoundImageView!
     
     
