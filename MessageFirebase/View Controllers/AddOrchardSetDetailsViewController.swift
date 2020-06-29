@@ -22,15 +22,14 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     @IBOutlet weak var OrchadFruitsTextField: UITextField!
     
     @IBOutlet weak var ContactNumberTextField: UITextField!
-        
-    
-    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
-        return .portrait
-    }
-    
-    override var shouldAutorotate: Bool{
-        false
-    }
+//    Todo: build lanscape mode
+//    override var supportedInterfaceOrientations: UIInterfaceOrientationMask{
+//        return .portrait
+//    }
+//
+//    override var shouldAutorotate: Bool{
+//        false
+//    }
     
     
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -73,11 +72,13 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     func setUpElements(){
         //errorLabel.alpha = 0
         
-        Utilities.styleTextField(OrchardNameTextField)
-        Utilities.styleTextField(OrchadFruitsTextField)
-        Utilities.styleTextField(ContactNumberTextField)
+//        Utilities.styleTextField(OrchardNameTextField)
+//        Utilities.styleTextField(OrchadFruitsTextField)
+//        Utilities.styleTextField(ContactNumberTextField)
         //Utilities.styleTextField(DetailsAboutOrchardTextField)
         Utilities.styleFilledButton(nextPageButton)
+        descriptionTextView.clipsToBounds = true;
+        descriptionTextView.layer.cornerRadius = 10.0;
         
     }
     
@@ -175,28 +176,8 @@ class AddOrchardSetDetailsViewController:  UIViewController {
 
         print("orchard", orchard)
         
-//        self.tabBarController?.view.reloadInputViews()
-//
-//
-//        self.navigationController?.dismiss(animated: true, completion: {
-//             self.navigationController?.popToRootViewController(animated: true)
-//        })
-//
-//
-//        if let topController = UIApplication.topViewController() {
-//                // navigate to the root
-//            topController.navigationController?.popToRootViewController(animated: true)
-//        }
-//        let sb = UIStoryboard(name: "UserBoard", bundle: .main)
-//        sb.instantiateInitialViewController()
-//        self.window?.rootViewController = sb.instantiateInitialViewController()
-        
         validateFields()
-        
-        //print("To OrchardMain")
-
-        
-        
+    
         
         setUpElements()
         checkForEditMode()
