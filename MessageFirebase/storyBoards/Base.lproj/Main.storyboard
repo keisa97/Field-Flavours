@@ -224,8 +224,8 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="NRR-HR-Ci5"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-XF-Hew">
-                                <rect key="frame" x="40" y="746" width="133" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="MJ1-XF-Hew">
+                                <rect key="frame" x="40" y="746" width="133" height="123"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0c-kf-bsM">
                                         <rect key="frame" x="0.0" y="0.0" width="133" height="50"/>
@@ -240,7 +240,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78G-IT-cEc">
-                                        <rect key="frame" x="0.0" y="70" width="133" height="50"/>
+                                        <rect key="frame" x="0.0" y="73" width="133" height="50"/>
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="loginBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DE7-su-VSP"/>
@@ -252,35 +252,37 @@
                                     <constraint firstItem="78G-IT-cEc" firstAttribute="height" secondItem="F0c-kf-bsM" secondAttribute="height" id="mzK-VF-KYv"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXr-xE-pa1">
-                                <rect key="frame" x="244" y="781.5" width="130" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Or -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-7S-ZUF">
+                                <rect key="frame" x="181" y="797.5" width="43" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GXr-xE-pa1">
+                                <rect key="frame" x="244" y="741" width="130" height="130"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="0.75339790239726023" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="130" id="NKw-Yv-qkc"/>
-                                    <constraint firstAttribute="height" constant="50" id="ofT-rL-4OA"/>
+                                    <constraint firstAttribute="height" constant="130" id="ofT-rL-4OA"/>
                                 </constraints>
-                                <state key="normal" title="continue"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="20"/>
+                                <state key="normal" title="Skip to the flavors"/>
                                 <connections>
                                     <action selector="continueWithoutUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcA-JU-LUQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- Or -" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lg5-7S-ZUF">
-                                <rect key="frame" x="181" y="796" width="43" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="lg5-7S-ZUF" firstAttribute="leading" secondItem="MJ1-XF-Hew" secondAttribute="trailing" constant="8" id="6XH-Q1-Fkk"/>
                             <constraint firstItem="Dlc-dF-nSN" firstAttribute="trailing" secondItem="GXr-xE-pa1" secondAttribute="trailing" id="8XD-xw-pkn"/>
                             <constraint firstItem="Dlc-dF-nSN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="AjM-Bv-jHq"/>
-                            <constraint firstItem="lg5-7S-ZUF" firstAttribute="baseline" secondItem="GXr-xE-pa1" secondAttribute="baseline" id="FUe-jo-Oxn"/>
+                            <constraint firstItem="lg5-7S-ZUF" firstAttribute="baseline" secondItem="GXr-xE-pa1" secondAttribute="baseline" constant="-13" id="FUe-jo-Oxn"/>
                             <constraint firstItem="Dlc-dF-nSN" firstAttribute="leading" secondItem="MJ1-XF-Hew" secondAttribute="leading" id="JVg-Da-o64"/>
                             <constraint firstItem="MJ1-XF-Hew" firstAttribute="centerY" secondItem="lg5-7S-ZUF" secondAttribute="centerY" id="LYv-1q-yU5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GXr-xE-pa1" secondAttribute="trailing" constant="40" id="LbL-ec-k0I"/>
                             <constraint firstItem="MJ1-XF-Hew" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="658" id="MPj-kK-9G7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GXr-xE-pa1" secondAttribute="bottom" constant="-9" id="SNy-gw-qWl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KwX-1A-6Ii" secondAttribute="bottom" constant="49" id="SlN-77-g41"/>
                             <constraint firstItem="GXr-xE-pa1" firstAttribute="leading" secondItem="lg5-7S-ZUF" secondAttribute="trailing" constant="20" id="bCl-IN-KjP"/>
                             <constraint firstItem="MJ1-XF-Hew" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="er4-vH-dh8"/>
@@ -292,6 +294,7 @@
                     <connections>
                         <outlet property="MloginButton" destination="78G-IT-cEc" id="Odq-jf-GnO"/>
                         <outlet property="continueButton" destination="GXr-xE-pa1" id="hIY-oM-uRn"/>
+                        <outlet property="logoImageView" destination="Dlc-dF-nSN" id="dwD-9e-35A"/>
                         <outlet property="signUpButton" destination="F0c-kf-bsM" id="rJh-BR-1fC"/>
                     </connections>
                 </viewController>

@@ -116,7 +116,7 @@ class AddOrchadViewController: UIViewController, UIScrollViewDelegate, UIGesture
         
         Utilities.styleTextField(OrchadNameTextField)
         Utilities.styleTextField(OrchadFruitsTextField)
-        Utilities.styleFilledButton(addOrchadButtonOutlet)
+        Utilities.styleFilledGreenButton(addOrchadButtonOutlet)
     }
     //var finalOrchad: Orchard?
     

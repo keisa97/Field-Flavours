@@ -76,9 +76,10 @@ class AddOrchardSetDetailsViewController:  UIViewController {
 //        Utilities.styleTextField(OrchadFruitsTextField)
 //        Utilities.styleTextField(ContactNumberTextField)
         //Utilities.styleTextField(DetailsAboutOrchardTextField)
-        Utilities.styleFilledButton(nextPageButton)
+        Utilities.styleFilledGreenButton(nextPageButton)
         descriptionTextView.clipsToBounds = true;
         descriptionTextView.layer.cornerRadius = 10.0;
+        
         
     }
     
@@ -161,9 +162,9 @@ class AddOrchardSetDetailsViewController:  UIViewController {
         }
         
         // set button to true whenever all textfield criteria is met.
-        for textfield in textFields{
-            textfield.textColor = .black
-        }
+//        for textfield in textFields{
+//            textfield.textColor = .black
+//        }
         nextPageButton.isEnabled = true
 
     }

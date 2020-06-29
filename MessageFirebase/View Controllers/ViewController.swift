@@ -12,6 +12,7 @@ import Firebase
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var logoImageView: UIImageView!
     
     var videoPlayer:AVPlayer?
     
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
     func setUpElements(){
      //errorLabel.alpha = 0
     
-        Utilities.styleFilledButton(MloginButton)
+        Utilities.styleFilledGreenButton(MloginButton)
         Utilities.styleHollowButton(signUpButton)
         Utilities.naturalButton(continueButton)
 
@@ -109,11 +110,15 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setUpElements()
         
+        
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setUpVideo()
+        UIView.animate(withDuration: 1.7, animations: {
+            self.logoImageView.frame.origin.y += 500
+        })
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -121,6 +126,8 @@ class ViewController: UIViewController {
         videoPlayer = nil
         print(videoPlayer)
     }
+    
+
 
     
 

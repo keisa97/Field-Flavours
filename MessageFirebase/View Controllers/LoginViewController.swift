@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
     
     Utilities.styleTextField(emailTextField)
     Utilities.styleTextField(passwordTextField)
-    Utilities.styleFilledButton(loginButton)
+    Utilities.styleFilledGreenButton(loginButton)
     }
     
     func transitionToHome(){

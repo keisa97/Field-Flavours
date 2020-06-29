@@ -36,7 +36,7 @@ class SignUpViewController: UIViewController {
         Utilities.styleTextField(lastNameTextField)
         Utilities.styleTextField(emailTextField)
         Utilities.styleTextField(passwordTextField)
-        Utilities.styleFilledButton(singUpButton)
+        Utilities.styleFilledGreenButton(singUpButton)
     }
     
     override func viewDidLoad() {

@@ -136,9 +136,9 @@ class DetailsViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     func setUpElements() {
-        Utilities.styleFilledButton(navigateBtn)
+        Utilities.styleFilledGreenButton(navigateBtn)
         if editBtn != nil {
-        Utilities.styleHollowButton(editBtn)
+        Utilities.styleFilledRedButton(editBtn)
 
         }
     }

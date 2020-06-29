@@ -173,7 +173,7 @@ class AddOrchardLocationAndImageViewController: UIViewController {
     func setUpElements(){
         //errorLabel.alpha = 0
         Utilities.pickButton(pickPhoto)
-        Utilities.styleFilledButton(btnFinishAndUpload)
+        Utilities.styleFilledGreenButton(btnFinishAndUpload)
     }
     
     //for annotation
