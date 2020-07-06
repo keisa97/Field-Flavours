@@ -6,6 +6,8 @@
 //  Copyright © 2020 shahar keisar. All rights reserved.
 //
 
+//later use: set lanscape mode for the application
+
 import UIKit
 
 class PortraitNavController: UINavigationController {

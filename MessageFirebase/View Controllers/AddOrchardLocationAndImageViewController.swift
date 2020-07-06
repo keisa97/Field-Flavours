@@ -163,7 +163,6 @@ class AddOrchardLocationAndImageViewController: UIViewController {
         guard let ref = seguedOrchard?.imageRef else {return}
 //        //if we have an image load it
         orchardImage.sd_setImage(with: ref)
-        print("ref", ref)
         if let _ = seguedOrchard?.orchardImageBackgroundImageURL{
             orchardImage.sd_setImage(with: ref)
         }
@@ -197,7 +196,6 @@ class AddOrchardLocationAndImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpElements()
-        print( "editmode:" ,editMode)
         if (editMode){
             btnFinishAndUpload.setTitle("Finish Edits ✔︎", for: .normal)
             setEditModeFields()
@@ -320,6 +318,4 @@ extension AddOrchardLocationAndImageViewController: UIImagePickerControllerDeleg
         picker.dismiss(animated: true)
     }
 }
-//protocol EditingFinish {
-//    func didFinish(isFinish: Bool)
-//}
+

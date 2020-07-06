@@ -111,7 +111,7 @@
 		33E5FFC0246474C20012A9A3 /* OrchardsAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrchardsAnnotation.swift; sourceTree = "<group>"; };
 		33E5FFC32466F2750012A9A3 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		33E5FFC52466F2750012A9A3 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		33E76A9B2425178600380428 /* MessageFirebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageFirebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33E76A9B2425178600380428 /* Field Flavours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Field Flavours.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		33E76A9E2425178600380428 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33E76AA02425178600380428 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		33E76AA22425178600380428 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -263,7 +263,7 @@
 		33E76A9C2425178600380428 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33E76A9B2425178600380428 /* MessageFirebase.app */,
+				33E76A9B2425178600380428 /* Field Flavours.app */,
 				33E76AB12425178700380428 /* MessageFirebaseTests.xctest */,
 				33E76ABC2425178700380428 /* MessageFirebaseUITests.xctest */,
 			);
@@ -349,7 +349,7 @@
 			);
 			name = MessageFirebase;
 			productName = MessageFirebase;
-			productReference = 33E76A9B2425178600380428 /* MessageFirebase.app */;
+			productReference = 33E76A9B2425178600380428 /* Field Flavours.app */;
 			productType = "com.apple.product-type.application";
 		};
 		33E76AB02425178700380428 /* MessageFirebaseTests */ = {
@@ -719,7 +719,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = myiosDev.MessageFirebase;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Field Flavours";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -738,7 +738,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = myiosDev.MessageFirebase;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Field Flavours";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

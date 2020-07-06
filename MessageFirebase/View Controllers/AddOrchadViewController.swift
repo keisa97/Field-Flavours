@@ -6,6 +6,8 @@
 //  Copyright © 2020 shahar keisar. All rights reserved.
 //
 
+//this ViewController isn't active, but keeping it for later methods ussage
+
 import UIKit
 import Firebase
 import MapKit

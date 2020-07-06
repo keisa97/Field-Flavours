@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
 
     }
-    
+    //method not in use 
     func transitionToHome(){
         let homeViewController =
             self.storyboard?.instantiateViewController(identifier: Constants.Storyboard.homeViewController) as? HomeViewController

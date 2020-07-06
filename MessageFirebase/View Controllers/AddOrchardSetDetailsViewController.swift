@@ -50,15 +50,7 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     
     @IBAction func NextPageButton(_ sender: UIButton) {
         
-//        guard let orchardName = OrchardNameTextField.text, !orchardName.isEmpty,
-//              let orchardFruits = OrchadFruitsTextField.text, !orchardFruits.isEmpty,
-//              let contactNumber = ContactNumberTextField.text, !contactNumber.isEmpty,
-//              let detailsAboutOrchard = DetailsAboutOrchardTextField.text, !detailsAboutOrchard.isEmpty
 //
-//            else {
-//           // show an alert
-//           return
-//        }
         if validateFields(){
             performSegue(withIdentifier: "addOrchardSegue", sender: nil)
             //  [orchardName, orchardFruits,contactNumber,detailsAboutOrchard]
@@ -70,12 +62,7 @@ class AddOrchardSetDetailsViewController:  UIViewController {
     }
     
     func setUpElements(){
-        //errorLabel.alpha = 0
-        
-//        Utilities.styleTextField(OrchardNameTextField)
-//        Utilities.styleTextField(OrchadFruitsTextField)
-//        Utilities.styleTextField(ContactNumberTextField)
-        //Utilities.styleTextField(DetailsAboutOrchardTextField)
+       
         Utilities.styleFilledGreenButton(nextPageButton)
         descriptionTextView.clipsToBounds = true;
         descriptionTextView.layer.cornerRadius = 10.0;
