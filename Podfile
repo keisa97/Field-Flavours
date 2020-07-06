@@ -12,7 +12,6 @@ pod 'Firebase/Storage'
 pod 'Firebase/Firestore'
 pod 'Firebase/Database'
 pod 'Firebase/Core' 
-pod 'LocationPicker'
 pod 'FirebaseUI/Storage'
 
 pod 'PKHUD'

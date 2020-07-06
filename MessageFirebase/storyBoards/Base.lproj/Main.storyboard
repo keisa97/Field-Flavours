@@ -10,7 +10,7 @@
         <!--Sign Up View Controller-->
         <scene sceneID="r8d-bv-Dyd">
             <objects>
-                <viewController id="21M-x6-CBG" customClass="SignUpViewController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="21M-x6-CBG" customClass="SignUpViewController" customModule="מ_טעים" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QAr-v4-qCW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,7 +113,7 @@
         <!--Login View Controller-->
         <scene sceneID="fi8-af-cag">
             <objects>
-                <viewController id="Bpn-Pq-EsL" customClass="LoginViewController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Bpn-Pq-EsL" customClass="LoginViewController" customModule="מ_טעים" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4oH-Qn-O0W">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -168,7 +168,6 @@
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQF-pP-qSU">
                                 <rect key="frame" x="8" y="201" width="30" height="30"/>
-                                <state key="normal" title="👓"/>
                                 <connections>
                                     <action selector="showPass:" destination="Bpn-Pq-EsL" eventType="touchUpInside" id="Lt9-wg-izk"/>
                                 </connections>
@@ -204,7 +203,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MessageFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="מ_טעים" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
