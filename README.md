@@ -16,7 +16,7 @@ while shopping at fair prices and a rural experience!
 
 עם האפליקציה תוכלו להגיע אל החקלאים עצמם בקלות ולהנות מחווית רכישה ייחודית ומהנה ביותר, תוך כדי קנייה במחירים הוגנים וחויה כפרית!
 
-![alt text](https://i.ibb.co/f9S7JBR/IMG-20200825-120413-464.png)
+![alt text](https://i.ibb.co/jM4DD24/IMG-20200825-120413-464.png)
 
 ![alt text](https://lh3.googleusercontent.com/Yc-b7iEOFhJLAA7ENgKvrpE3evnLyOhQpwLJaa70fohYTMtLFyERvY8uCwOwhkD_eyECGKm0LuLVI8qgetx7L59KJDP7rc4Z3jzMZbgQZ2vwWjcp0IYudifzz8FxkaY4Wofo1slS62ZFaFfoiTIWpm7haeR8Z-yeQH4m-qUfSnmGLrNeJQJpgdeuXWUt4VLlmsJPbmCboU_3Zc4U1xM0Ht63SBFE4qYuLrhymP73e6vbaZKAQlfswPoGVDg97HFzsTu35SCOh-u5G46oS9ayi-gi15LCn2y7r-cp627gkVdTD_haC2ixhw88Fc18kD4sf7niFgt_WpSPucZ_wfeIck8yeIQjNU3-KrAtrWGR3proAxDHeT1AbjLjW6EsHwiF3O1TQhzneBNIhelt_scW4jxbH2xl4uHfHHZcNOg3hLzdXtGfk3sRveoWhNpTU0n2jHNGRWztWMw_zAtDGSEBl0Bj2xmWi65lnDOIqdMnp4XZbvDBy0XBN5twCmifdh1YrU0ux9xbwfZTtYhpWKu91jiJYFIbbEzTxdlToZCeaokfCgjFGEZa3Kmb4RTmGWhHPUOJmd0DSXjPuMERxzzpbwNNE8weGCy2xphS7e2ZmG3av4iOTSaK_siNl1qNFA49RQrBD_zrFjZi0If2CJToMvp3HMakfozN_nJFFbP5tbDlVMMU66FDcUFJj6CzxDU=w440-h952-no?authuser=0)
 
